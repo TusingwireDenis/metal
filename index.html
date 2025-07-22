@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARAFAT METAL WORKS - Precision Metal Fabrication in Kisoro, Uganda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a5f9c;
+            --secondary: #2a8bf2;
+            --accent: #ff7d00;
+            --dark: #333;
+            --light: #f4f4f4;
+            --metal: #7d7d7d;
+            --admin: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background: #e67300;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: #134b7e;
+        }
+        
+        .btn-admin {
+            background: var(--admin);
+        }
+        
+        .btn-admin:hover {
+            background: #2d3748;
+        }
+        
+        .price-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 15px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        section {
+            padding: 70px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: lawngreen;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+        
+        header.scrolled {
+
+
+            padding: 5px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        nav {
+                       display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+
+        }
+        
+        .logo span {
+            color: var(--accent);
+            margin-left: 5px;
+        }
+        
+        .logo-img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 35px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 17px;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Slider */
+        .hero {
+            height: 90vh;
+            position: relative;
+            margin-top: 70px;
+            overflow: hidden;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 120px;
+            left: 80px;
+            max-width: 650px;
+            background-color: rgba(26, 95, 156, 0.85);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-content h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slide-content p {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('pattern.png') repeat;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+            background-color: lightskyblue;
+            border-radius: 20px;
+        }
+        
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.4s;
+            border-top: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 60px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: var(--accent);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .gallery::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: var(--light);
+            z-index: 0;
+        }
+        
+        .gallery .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: 2px solid var(--primary);
+            padding: 10px 25px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 95, 156, 0.2);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 280px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: rgba(26, 95, 156, 0.9);
+            color: white;
+            transition: bottom 0.4s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            bottom: 0;
+        }
+        
+        .gallery-overlay h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .gallery-overlay p {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+        
+        .gallery-overlay em {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            background-color: var(--light);
+            text-align: center;
+            position: relative;
+        }
+        
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('pattern.png') repeat;
+            opacity: 0.03;
+        }
+        
+        .why-us .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--primary);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature i {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .feature:hover i {
+            transform: scale(1.1);
+            color: var(--accent);
+        }
+        
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team {
+            background-color: white;
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.4s;
+            border-top: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-member:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .team-member:hover img {
+            transform: scale(1.03);
+        }
+        
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .team-member p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .team-member p:last-child {
+            color: #555;
+            font-weight: normal;
+            line-height: 1.6;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('pattern-light.png') repeat;
+            opacity: 0.05;
+        }
+        
+        .testimonials .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonials h2 {
+            color: white;
+        }
+        
+        .testimonial-slider {
+            max-width: 850px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 0 20px;
+            transition: all 0.3s;
+        }
+        
+        .testimonial:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+        }
+        
+        .testimonial-content::before {
+            top: -25px;
+            left: -15px;
+        }
+        
+        .testimonial-content::after {
+            bottom: -50px;
+            right: -15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: white;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: var(--light);
+            z-index: 0;
+        }
+        
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-item i {
+            font-size: 28px;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+        
+        .contact-item div h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .contact-item div p, 
+        .contact-item div a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item div a:hover {
+            color: var(--primary);
+        }
+        
+        .contact-item div strong {
+            color: var(--dark);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 95, 156, 0.1);
+            outline: none;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button[type="submit"] {
+            width: 100%;
+        }
+        
+        .contact-form p {
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+        }
+        .add{
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            padding: 20px;
+            margin-right: 200px;
+        }
+        
+        .map {
+            height: 450px;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Video Section */
+        .video-section {
+            background: var(--light);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-placeholder {
+            background: #ddd;
+            padding: 50px;
+            border: 2px dashed #999;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .video-placeholder:hover {
+            background: #eee;
+            border-color: var(--primary);
+        }
+        
+        .video-placeholder i {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .video-placeholder p {
+            font-size: 18px;
+            color: #555;
+        }
+        
+        /* Admin Dashboard */
+        .admin-dashboard {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        
+        .admin-btn {
+            background: var(--admin);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .admin-btn:hover {
+            background: #2d3748;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+            z-index: 9998;
+            transition: right 0.4s;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .admin-panel.active {
+            right: 0;
+        }
+        
+        .admin-panel h3 {
+            color: var(--admin);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .admin-form label {
+            font-weight: 600;
+            color: var(--admin);
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .admin-form input,
+        .admin-form textarea,
+        .admin-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .admin-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .admin-form button {
+            background: var(--admin);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .admin-form button:hover {
+            background: #2d3748;
+        }
+        
+        .close-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+        
+        .close-panel:hover {
+            color: var(--primary);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('pattern-dark.png') repeat;
+            opacity: 0.05;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .copyright span {
+            color: var(--accent);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .slide-content {
+                left: 50px;
+                bottom: 80px;
+                max-width: 550px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-image {
+                margin-top: 30px;
+            }
+            
+            .slide-content {
+                left: 40px;
+                bottom: 70px;
+                max-width: 500px;
+                padding: 30px;
+            }
+            
+            .slide-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 50px 0;
+                transition: left 0.4s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                height: 80vh;
+            }
+            
+            .slide-content {
+                left: 20px;
+                right: 20px;
+                bottom: 40px;
+                max-width: none;
+            }
+            
+            .slide-content h1 {
+                font-size: 2rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+            
+            .admin-panel {
+                width: 320px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 70vh;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+                margin: 5px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .admin-panel.active {
+                right: 0;
+            }
+            
+            .whatsapp-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 22px;
+            }
+            
+            .slide-content {
+                padding: 20px;
+            }
+            
+            .slide-content h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Admin Dashboard Button -->
+    <div class="admin-dashboard">
+        <a href="#" class="admin-btn" id="adminToggle">
+            <i class="fas fa-user-cog"></i>
+            <span>Admin</span>
+        </a>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <span class="close-panel" id="closePanel">&times;</span>
+        <h3>Admin Dashboard</h3>
+        
+        <div class="admin-form">
+            <div>
+                <label for="postTitle">Post Title</label>
+                <input type="text" id="postTitle" placeholder="Enter post title">
+            </div>
+            
+            <div>
+                <label for="postContent">Post Content</label>
+                <textarea id="postContent" placeholder="Enter post content"></textarea>
+            </div>
+            
+            <div>
+                <label for="postCategory">Category</label>
+                <select id="postCategory">
+                    <option value="news">News</option>
+                    <option value="updates">Updates</option>
+                    <option value="projects">Projects</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="postImage">Upload Image</label>
+                <input type="file" id="postImage" accept="image/*">
+            </div>
+            
+            <div>
+                <label for="postVideo">Upload Video</label>
+                <input type="file" id="postVideo" accept="video/*">
+            </div>
+            
+            <button type="button" id="submitPost">Publish Post</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="19.jpg" alt="Arafat Metal Works Logo" class="logo-img">
+                    ARAFAT <span>METAL WORKS</span>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero" id="home">
+        <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('gate.jpg');">
+                <div class="slide-content">
+                    <h1>Precision Metal Works in Kisoro</h1>
+                    <p>Built to Last - Quality Fabrication Since 2021</p>
+                    <div class="price-badge">Competitive & Negotiable Prices</div>
+                    <a href="#contact" class="btn">Get a Free Quote</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('5.jpg');">
+                <div class="slide-content">
+                    <h1>Custom Metal Fabrication</h1>
+                    <p>From concept to completion, we bring your ideas to life</p>
+                    <div class="price-badge">Flexible Pricing Options</div>
+                    <a href="#gallery" class="btn">View Our Work</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('10.jpg');">
+                <div class="slide-content">
+                    <h1>Industrial Welding Experts</h1>
+                    <p>Certified welders for all your structural needs</p>
+                    <div class="price-badge">Affordable Rates</div>
+                    <a href="#services" class="btn">Our Services</a>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide" style="background-image: url('20.jpg');">
+                <div class="slide-content">
+                    <h1>24/7 Emergency Repairs</h1>
+                    <p>Fast response for urgent metal fabrication needs</p>
+                    <div class="price-badge">Fair & Negotiable Pricing</div>
+                    <a href="tel:+256767292901" class="btn">Call Now</a>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="slide" style="background-image: url('17.jpg');">
+                <div class="slide-content">
+                    <h1>Your Local Metal Experts</h1>
+                    <p>Serving Kisoro and surrounding areas with pride</p>
+                    <div class="price-badge">Prices Tailored to Your Budget</div>
+                    <a href="#about" class="btn">Learn About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 style="font-weight: bolder;">About ARAFAT METAL WORKS</h2>
+            <marquee scrollamoutnts="20"><p style="color: lawngreen;">Your trusted partner in metal fabrication and welding solutions</p></marquee>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Serving Kisoro with Quality & Integrity Since 2021</h3>
+                    <p>Founded by Mr. Arafat, our company has grown from a small workshop to Kisoro's premier metal fabrication service provider. We take pride in our Ugandan roots and commitment to excellence in every project we undertake.</p>
+                    <p><strong>We offer competitive and negotiable pricing</strong> to ensure our high-quality metal work is accessible to all customers in Kisoro and surrounding areas. Our team will work with you to find solutions that fit your budget without compromising on quality.</p>
+                    <a href="#team" class="btn btn-primary">Meet Our Team</a>
+                </div>
+                <div class="about-image">
+                    <img src="22.jpg" alt="Arafat Metal Works Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>Comprehensive metal fabrication solutions at negotiable prices</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>MIG/TIG Welding</h3>
+                    <p>Precision welding for all metals including steel, aluminum, and stainless steel. Our certified welders deliver clean, strong joints for any application.</p>
+                    <div class="price-badge">Prices Negotiable</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Structural Fabrication</h3>
+                    <p>From beams to staircases, we fabricate durable structural components that meet all safety standards and building codes.</p>
+                    <div class="price-badge">Competitive Rates</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Custom Metal Art</h3>
+                    <p>Transform your space with beautiful custom gates, railings, sculptures, and signage crafted by our skilled artisans.</p>
+                    <div class="price-badge">Flexible Pricing</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>CNC Cutting & Repairs</h3>
+                    <p>Precision cutting services and expert repairs for all metal components, machinery, and equipment.</p>
+                    <div class="price-badge">Affordable Options</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <h3>Why Choose Us?</h3>
+                <p><strong>Quality Workmanship</strong> | <strong>Competitive & Negotiable Pricing</strong> | <strong>24/7 Emergency Services</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Our Work Gallery</h2>
+            <p>Explore our portfolio of completed projects - All at competitive, negotiable prices</p>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="artistic">Artistic</button>
+                <button class="filter-btn" data-filter="industrial">Industrial</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Commercial Projects -->
+                <div class="gallery-item" data-category="commercial">
+                    <img src="1.jpg" alt="Commercial Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Commercial Security Gate</h3>
+                        <p>Custom security gate for local business in Kisoro</p>
+                        <p><em>Prices negotiable based on size and design</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="commercial">
+                    <img src="2.jpg" alt="Commercial Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Storefront Security</h3>
+                        <p>Reinforced metal security for retail shops</p>
+                        <p><em>Competitive pricing available</em></p>
+                    </div>
+                </div>
+                
+                <!-- Residential Projects -->
+                <div class="gallery-item" data-category="residential">
+                    <img src="3.jpg" alt="Residential Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Residential Railing</h3>
+                        <p>Custom balcony railing for home in Kisoro</p>
+                        <p><em>Flexible pricing options</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="residential">
+                    <img src="4.jpg" alt="Residential Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Home Security Gate</h3>
+                        <p>Decorative yet secure entrance gate</p>
+                        <p><em>Prices tailored to your budget</em></p>
+                    </div>
+                </div>
+                
+                <!-- Artistic Projects -->
+                <div class="gallery-item" data-category="artistic">
+                    <img src="6.jpg" alt="Artistic Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Metal Sculpture</h3>
+                        <p>Custom art piece for local community center</p>
+                        <p><em>Negotiable pricing based on complexity</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="artistic">
+                    <img src="gate.jpg" alt="Artistic Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Decorative Gate</h3>
+                        <p>Ornate entrance gate with custom design</p>
+                        <p><em>Competitive rates available</em></p>
+                    </div>
+                </div>
+                
+                <!-- Industrial Projects -->
+                <div class="gallery-item" data-category="industrial">
+                    <img src="7.jpg" alt="Industrial Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Industrial Equipment</h3>
+                        <p>Custom fabrication for agricultural machinery</p>
+                        <p><em>Affordable solutions for businesses</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="industrial">
+                    <img src="8.jpg" alt="Industrial Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Structural Steel</h3>
+                        <p>Warehouse structural components</p>
+                        <p><em>Budget-friendly options</em></p>
+                    </div>
+                </div>
+                
+                <!-- Additional Images to Make Gallery More Extensive -->
+                <div class="gallery-item" data-category="commercial">
+                    <img src="9.jpg" alt="Commercial Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Office Partitions</h3>
+                        <p>Modern metal and glass office dividers</p>
+                        <p><em>Competitive commercial rates</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="residential">
+                    <img src="10.jpg" alt="Residential Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Staircase Railings</h3>
+                        <p>Custom designed interior staircase</p>
+                        <p><em>Affordable home solutions</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="artistic">
+                    <img src="11.jpg" alt="Artistic Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Garden Sculpture</h3>
+                        <p>Metal art for private garden</p>
+                        <p><em>Custom pricing available</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="industrial">
+                    <img src="12.jpg" alt="Industrial Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Machine Parts</h3>
+                        <p>Custom fabricated industrial components</p>
+                        <p><em>Bulk order discounts</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="commercial">
+                    <img src="13.jpg" alt="Commercial Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Retail Fixtures</h3>
+                        <p>Custom display units for local store</p>
+                        <p><em>Business-friendly pricing</em></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="residential">
+                    <img src="14.jpg" alt="Residential Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Window Guards</h3>
+                        <p>Decorative security for home windows</p>
+                        <p><em>Affordable home protection</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<ul class="add">
+    <li><div class="gallery-item" data-category="residential">
+                    <img src="15.jpg" alt="Residential Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Window Guards</h3>
+                        <p>Decorative security for home windows</p>
+                        <p><em>Affordable home protection</em></p>
+                    </div>
+                </div>
+            </div>
+        </div></li>
+
+         <li><div class="gallery-item" data-category="commercial">
+                    <img src="gate2.jpg" alt="Residential Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Braod gate</h3>
+                        <p>Decorative security for home gates</p>
+                        <p><em>Affordable home protection</em></p>
+                    </div>
+                </div>
+            </div>
+        </div></li>
+
+        <li><div class="gallery-item" data-category="residential">
+                    <img src="18.jpg" alt="Residential Metal Work">
+                    <div class="gallery-overlay">
+                        <h3>Due Work at Workshop</h3>
+                        <p>We bring you the best quality goods</p>
+                        <p><em>Affordable home protection</em></p>
+                    </div>
+                </div>
+            </div>
+        </div></li>
+</ul>
+        
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <h2>Why Choose ARAFAT METAL WORKS?</h2>
+            <p>We stand out from the competition</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality Materials</h3>
+                    <p>We use only the highest grade metals and components for durability that lasts generations.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Negotiable Pricing</h3>
+                    <p>We work with your budget to provide affordable solutions without compromising quality.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>On-Time Delivery</h3>
+                    <p>We respect your schedule and deliver projects as promised, every time.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Experienced Team</h3>
+                    <p>Certified professionals with decades of combined experience in metal fabrication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2>Our Team</h2>
+            <p>The skilled professionals behind our quality work</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="alaf.jpg" alt="Team Member">
+                    <h3>Mr. Arafat</h3>
+                    <p>Founder & Lead Fabricator</p>
+                    <p>With over 15 years in the industry, Arafat oversees all projects with an eye for perfection and ensures fair pricing for all customers.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="akiram.jpg" alt="Team Member">
+                    <h3>Mr. Akiram</h3>
+                    <p>TIG Welding Specialist</p>
+                    <p>10+ years experience in precision welding for delicate and complex projects at competitive rates.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="hamisi.jpg" alt="Team Member">
+                    <h3>Male Hamisi</h3>
+                    <p>Structural Fabricator</p>
+                    <p>Expert in heavy-duty structural components and industrial applications with cost-effective solutions.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="den.jpg" alt="Team Member">
+                    <h3>Tusingwire Denis</h3>
+                    <p>Social Media Handler</p>
+                    <p>Responsible for adverts and managing the workshop's media like flyers and others.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Our Work in Action</h2>
+            <p>Watch our craftsmen create quality metal products</p>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <i class="fas fa-video"></i>
+                    <p>Upload your workshop video here</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from satisfied customers across Uganda</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "ARAFAT METAL WORKS built the security gates for our entire apartment complex at a price that fit our budget. The quality is exceptional and their team was professional throughout the project."
+                    </div>
+                    <div class="testimonial-author">- Robert, Kampala</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "We negotiated a fair price for our custom railings and couldn't be happier with the results. The craftsmanship is outstanding and they delivered on time."
+                    </div>
+                    <div class="testimonial-author">- Grace Irankunda, Kisoro</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "The team worked with our limited budget to create beautiful window guards for our home. They were willing to negotiate and the final product exceeded our expectations."
+                    </div>
+                    <div class="testimonial-author">- Mark Niyonsenga, Kabale</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Get in touch for your metal fabrication needs - All prices negotiable!</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Bunagana Road, Kisoro Municipality, Uganda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+256767292901">+256 767 292 901</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@arafatmetalworks.com">info@arafatmetalworks.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-comment-dollar"></i>
+                        <div>
+                            <h3>Pricing</h3>
+                            <p><strong>All prices are negotiable!</strong> Contact us to discuss your project and budget.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday/Sunday: 9:00 AM - 2:00 PM</p>
+                            <p>Emergency services available 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <textarea placeholder="Tell us about your project and budget" required></textarea>
+                        <button type="submit" class="btn">Request Quote</button>
+                    </form>
+                    <p style="margin-top: 15px; font-style: italic;">All quotes are negotiable - we'll work with your budget!</p>
+                </div>
+            </div>
+            
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753123456789!2d29.684567!3d-1.285678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTcnMDguNCJTIDI5wrA0MScwNC40IkU!5e0!3m2!1sen!2sug!4v1620000000000!5m2!1sen!2sug" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/256767292901?text=Hi%20Arafat%20Metal%20Works,%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20discuss%20pricing" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ARAFAT METAL WORKS</h3>
+                    <p>Your trusted partner for quality metal fabrication and welding services in Kisoro and surrounding areas at negotiable prices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">MIG/TIG Welding</a></li>
+                        <li><a href="#">Structural Fabrication</a></li>
+                        <li><a href="#">Custom Metal Art</a></li>
+                        <li><a href="#">CNC Cutting</a></li>
+                        <li><a href="#">Emergency Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Bunagana Road, Kisoro</li>
+                        <li>Uganda</li>
+                        <li>Phone: <a href="tel:+256767292901">+256 767 292 901</a></li>
+                        <li>Email: <a href="mailto:info@arafatmetalworks.com">info@arafatmetalworks.com</a></li>
+                        <li><strong>All prices negotiable!</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 ARAFAT METAL WORKS. All Rights Reserved. <span>Prices are negotiable - contact us today!</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Hero Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 4 seconds (faster transition)
+        setInterval(nextSlide, 4000);
+        
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter items
+                const filter = btn.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Admin Panel Toggle
+        const adminToggle = document.getElementById('adminToggle');
+        const adminPanel = document.getElementById('adminPanel');
+        const closePanel = document.getElementById('closePanel');
+        
+        adminToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            adminPanel.classList.toggle('active');
+        });
+        
+        closePanel.addEventListener('click', () => {
+            adminPanel.classList.remove('active');
+        });
+        
+        // Form submission (placeholder - you'll need to implement actual functionality)
+        document.getElementById('submitPost').addEventListener('click', () => {
+            alert('Post would be submitted here. In a real implementation, this would connect to a backend.');
+            adminPanel.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
